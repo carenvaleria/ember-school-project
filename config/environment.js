@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    //this is where we initialize firebase 
+    firebase: {
+      apiKey: "AIzaSyAE0UZQzMJPiAc98m414wVSzzt2dBPa7uw",
+      authDomain: "chef-tracker-ember.firebaseapp.com",
+      databaseURL: "https://chef-tracker-ember.firebaseio.com",
+      storageBucket: "chef-tracker-ember.appspot.com",
+      messagingSenderId: "721445006213"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
