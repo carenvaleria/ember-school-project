@@ -1,0 +1,18 @@
+<h1>Chef tracker</h1>
+<p id="explanation"> This app tracks down all the chefs that you know and love.</p>
+
+<!-- Give button an action helper and give the action a string with the name of the action we're calling on the controller. You can add arguments to actions, and use actions multiple times-->
+<button {{action "wasClicked" "Button"}}>Click me!</button>
+
+
+<ul>
+  <!-- Each helper (block helpers) allows us to iterate through our object arrays, loops through each item in an array-->
+  {{#each chefs as |chef|}}
+    <!--If helper allows us to have a block show elements only if statement evaluates to true, in this case if the chef is available show name, else display name with strike through it-->
+    {{#if chef.isAvailable}}
+      <li><strong><u>{{chef.name}}</u></strong></li>
+    {{else}}
+      <li class="not-available">{{chef.name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>

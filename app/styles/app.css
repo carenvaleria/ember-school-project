@@ -1,0 +1,7 @@
+/*This is how we import our style sheets*/
+@import url("food-list.css");
+
+/*More styles*/
+#explanation{
+  text-decoration: underline;
+}
