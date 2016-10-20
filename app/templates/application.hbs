@@ -1,5 +1,8 @@
 <h1>Chef tracker</h1>
 <p id="explanation"> This app tracks down all the chefs that you know and love.</p>
+
+<p>{{chefLength}}</p>
+<p>{{chefAvailable}}</p>
 <!-- Give button an action helper and give the action a string with the name of the action we're calling on the controller. You can add arguments to actions, and use actions multiple times-->
 <ul>
   <!-- Each helper (block helpers) allows us to iterate through our object arrays, loops through each item in an array-->
@@ -8,13 +11,19 @@
     {{#if chef.isAvailable}}
       <li>
         <strong><u>{{chef.name}}</u></strong>
-        <button {{action "makeUnavailable" chef}}>Exit</button>
+        <button {{action 'makeUnavailable' chef}}>Exit</button>
       </li>
     {{else}}
       <li class="not-available">
         {{chef.name}}
-        <button{{action "makeAvailable" chef}}>Enter</button>
+        <button{{action 'makeAvailable' chef}}>Enter</button>
+        <button {{action 'destroyItem' chef}}>Fire!</button>
       </li>
     {{/if}}
   {{/each}}
 </ul>
+
+<hr />
+
+{{input value=newItem}}
+<button {{action 'saveNewItem'}}>Save</button>
